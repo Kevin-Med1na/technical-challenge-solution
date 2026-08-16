@@ -5,7 +5,7 @@ spring:
   application:
     name: technical-challenge
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/technical_challenge}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/technical_challenge}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
     password: ${SPRING_DATASOURCE_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
