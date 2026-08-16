@@ -13,7 +13,7 @@ public class AsyncConfig {
     @Bean(name = "extractionExecutor")
     public Executor extractionExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(3);   // maximo 3 peticiones simultáneas al sitio externo
+        executor.setCorePoolSize(3);   // máximo 3 peticiones simultáneas
         executor.setMaxPoolSize(3);
         executor.setQueueCapacity(50);
         executor.setThreadNamePrefix("extraction-");
