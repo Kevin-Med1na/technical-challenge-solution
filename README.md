@@ -66,22 +66,22 @@ mvn spring-boot:run
 
 ## Endpoints disponibles
 
-La documentación completa de la API está disponible en: http://localhost:8080/v3/api-docs
+La documentación completa de la API está disponible en: http://localhost:8080/swagger-ui.html
 
 ### Productos
 
-POST /products Crear producto manualmente
-GET /products Listar todos los productos
-GET /products/{id} Consultar producto por ID
-PATCH /products/{id} Actualizar producto parcialmente
-DELETE /products/{id} Eliminar producto
+POST /products Crear producto manualmente  
+GET /products Listar todos los productos  
+GET /products/{id} Consultar producto por ID  
+PATCH /products/{id} Actualizar producto parcialmente  
+DELETE /products/{id} Eliminar producto  
 
 
 ### Extracciones
 
-POST /extractions Solicitar extracción de productos
-GET /extractions/{id} Consultar estado del trabajo
-GET /extractions/{id}/products Consultar productos obtenidos del trabajo
+POST /extractions Solicitar extracción de productos  
+GET /extractions/{id} Consultar estado del trabajo  
+GET /extractions/{id}/products Consultar productos obtenidos del trabajo  
 
 
 ### Ejemplo de extracción
@@ -92,7 +92,7 @@ POST /extractions
 Content-Type: application/json
 
 {
-  "productIds": [1, 2, 3, 4, 5]
+  "productIds": [1, 2, 3]
 }
 ```
 
