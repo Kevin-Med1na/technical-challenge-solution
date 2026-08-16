@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: technical-challenge
+    name: technical-challenge-solution
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/technical_challenge}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
@@ -20,4 +20,4 @@ spring:
 
 springdoc:
   swagger-ui:
-    path: /swagger-ui.html/index.html
+    path: /swagger-ui.html
