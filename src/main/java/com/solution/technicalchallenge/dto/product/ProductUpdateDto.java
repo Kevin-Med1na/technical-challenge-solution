@@ -1,6 +1,5 @@
-package com.solution.technicalchallenge.dto;
+package com.solution.technicalchallenge.dto.product;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,12 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ProductRequestDto {
+public class ProductUpdateDto {
 
-    @NotBlank(message = "Name is required")
     private String name;
-
-    private Integer externalId;
     private String price;
     private String category;
     private String availability;

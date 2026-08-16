@@ -1,13 +1,11 @@
-package com.solution.technicalchallenge.dto;
+package com.solution.technicalchallenge.dto.extraction;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
-@Setter
-@NoArgsConstructor
-public class ProductUpdateDto {
+@AllArgsConstructor
+public class ScrapedProductData {
 
     private String name;
     private String price;
@@ -15,5 +13,4 @@ public class ProductUpdateDto {
     private String availability;
     private String condition;
     private String brand;
-    private String sourceUrl;
 }

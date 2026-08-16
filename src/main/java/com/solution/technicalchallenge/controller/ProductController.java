@@ -1,8 +1,8 @@
 package com.solution.technicalchallenge.controller;
 
-import com.solution.technicalchallenge.dto.ProductRequestDto;
-import com.solution.technicalchallenge.dto.ProductResponseDto;
-import com.solution.technicalchallenge.dto.ProductUpdateDto;
+import com.solution.technicalchallenge.dto.product.ProductRequestDto;
+import com.solution.technicalchallenge.dto.product.ProductResponseDto;
+import com.solution.technicalchallenge.dto.product.ProductUpdateDto;
 import com.solution.technicalchallenge.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

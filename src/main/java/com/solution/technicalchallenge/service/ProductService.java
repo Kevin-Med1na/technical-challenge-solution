@@ -1,8 +1,8 @@
 package com.solution.technicalchallenge.service;
 
-import com.solution.technicalchallenge.dto.ProductRequestDto;
-import com.solution.technicalchallenge.dto.ProductResponseDto;
-import com.solution.technicalchallenge.dto.ProductUpdateDto;
+import com.solution.technicalchallenge.dto.product.ProductRequestDto;
+import com.solution.technicalchallenge.dto.product.ProductResponseDto;
+import com.solution.technicalchallenge.dto.product.ProductUpdateDto;
 import com.solution.technicalchallenge.entity.Product;
 import com.solution.technicalchallenge.exception.ResourceNotFoundException;
 import com.solution.technicalchallenge.repository.ProductRepository;
@@ -65,7 +65,7 @@ public class ProductService {
                 .orElseThrow(() -> new ResourceNotFoundException("Product not found with id: " + id));
     }
     //metodo de mapeo que usan todos los metodos publicos
-    private ProductResponseDto toResponse(Product product) {
+    public ProductResponseDto toResponse(Product product) {
         return ProductResponseDto.builder()
                 .id(product.getId())
                 .externalId(product.getExternalId())

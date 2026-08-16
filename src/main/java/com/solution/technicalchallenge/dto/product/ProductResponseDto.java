@@ -1,4 +1,4 @@
-package com.solution.technicalchallenge.dto;
+package com.solution.technicalchallenge.dto.product;
 
 import lombok.*;
 
