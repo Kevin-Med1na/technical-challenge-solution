@@ -1,7 +1,7 @@
 package com.solution.technicalchallenge.service;
 
 import com.solution.technicalchallenge.dto.extraction.ScrapedProductData;
-import org.jsoup.Jsoup;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import org.jsoup.nodes.Document;
@@ -9,15 +9,13 @@ import org.jsoup.nodes.Element;
 import java.io.IOException;
 
 @Service
+@RequiredArgsConstructor
 public class ScrapingService {
 
-    private static final String BASE_URL = "https://automationexercise.com/product_details/";
+    private final ScrapingDocumentClient scrapingDocumentClient;
 
     public ScrapedProductData scrape(Integer externalId) throws IOException {
-        Document doc = Jsoup.connect(BASE_URL + externalId)
-                .userAgent("Mozilla/5.0")
-                .timeout(10_000)
-                .get();
+        Document doc = scrapingDocumentClient.fetchProductDocument(externalId);
 
         String name = doc.select(".product-information h2").text();
 

@@ -64,6 +64,37 @@ docker compose up postgres -d
 mvn spring-boot:run
 ```
 
+## Pruebas automatizadas
+
+El proyecto incluye pruebas automatizadas para validar la capa web y la lógica de scraping
+sin depender de una base de datos ni de llamadas reales al sitio externo.
+
+Para ejecutar toda la suite:
+
+```bash
+# Windows
+.\mvnw.cmd test
+
+# Linux/macOS
+./mvnw test
+```
+
+También se pueden ejecutar con Maven instalado localmente:
+
+```bash
+mvn test
+```
+
+La suite incluye:
+
+- **Tests de integración de controladores**: levantan solo la capa web de Spring con
+  `@WebMvcTest` y `MockMvc`. Simulan peticiones HTTP reales contra los endpoints de
+  productos y extracciones, mientras los servicios se reemplazan por mocks con Mockito.
+- **Tests unitarios del servicio de scraping**: prueban `ScrapingService` sin levantar
+  Spring ni hacer requests de red. El HTML se mockea con documentos creados mediante
+  Jsoup para validar el parseo de nombre, precio, categoría, disponibilidad, condición
+  y marca.
+
 ## Endpoints disponibles
 
 La documentación completa de la API está disponible en: http://localhost:8080/swagger-ui.html
@@ -154,8 +185,6 @@ implicaría lógica de parsing que puede fallar ante variaciones del formato del
 - **Reintentos automáticos**: ante fallas de red o timeouts, reintentar la extracción
   de un ítem con backoff exponencial antes de marcarlo como fallido.
 - **Cancelación de trabajos**: endpoint para cancelar un job en curso.
-- **Pruebas automatizadas**: tests de integración para los endpoints y tests unitarios
-  para el servicio de scraping con HTML mockeado.
 - **Paginación**: el endpoint `GET /products` debería paginar resultados para
   manejar volúmenes grandes.
 - **Manejo de jobs huérfanos**: al iniciar la aplicación, marcar como `FAILED`
