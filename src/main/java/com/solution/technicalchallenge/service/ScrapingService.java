@@ -21,6 +21,10 @@ public class ScrapingService {
 
         String name = doc.select(".product-information h2").text();
 
+        if (name == null || name.isBlank()) {
+            throw new RuntimeException("Product " + externalId + " has no content available");
+        }
+
         Element priceElement = doc.select(".product-information span span").first();
         String price = priceElement != null ? priceElement.text() : null;
 
